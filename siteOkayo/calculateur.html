@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculateur de Prix TTC</title>
+    <style>
+        /* CSS pour le centrage du formulaire */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        form {
+            width: 300px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+        input {
+            width: calc(100% - 20px); /* Largeur du champ moins les bordures et les marges */
+            padding: 8px;
+            margin-bottom: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        footer {
+            text-align: center;
+            margin-top: auto; /* Place le footer en bas de la page */
+            padding: 10px 0; /* Ajoute un peu d'espace autour du footer */
+            background-color: #f2f2f2; /* Fond gris clair pour le footer */
+        }
+        footer button {
+            padding: 10px 20px; /* Espacement du bouton */
+            font-size: 16px; /* Taille de la police */
+            border: none;
+            background-color: #007bff; /* Couleur de fond bleue pour le bouton */
+            color: white; /* Couleur du texte */
+            cursor: pointer;
+            border-radius: 5px; /* Coins arrondis pour le bouton */
+            text-decoration: none; /* Supprime le soulignement */
+        }
+        footer button:hover {
+            background-color: #0056b3; /* Couleur de fond plus sombre au survol */
+        }
+    </style>
+</head>
+<body>
+    <form id="prixTTCForm">
+        <label for="ht">Prix HT :</label>
+        <input type="number" id="ht" name="ht" step="0.01" placeholder="Entrez le prix HT" required>
+        
+        <label for="tva">Taux de TVA (%) :</label>
+        <input type="number" id="tva" name="tva" step="0.01" placeholder="Entrez le taux de TVA en %" required>
+        
+        <button type="button" onclick="calculerTTC()">Calculer TTC</button>
+
+        <label for="ttc">Prix TTC :</label>
+        <input type="text" id="ttc" name="ttc" readonly>
+    </form>
+
+    <script>
+        function calculerTTC() {
+            // Récupérer les valeurs de HT et TVA
+            var ht = parseFloat(document.getElementById('ht').value);
+            var tva = parseFloat(document.getElementById('tva').value);
+
+            // Calculer le TTC
+            var ttc = ht * (1 + (tva / 100));
+
+            // Afficher le résultat dans l'input TTC avec deux décimales
+            document.getElementById('ttc').value = ttc.toFixed(2);
+        }
+    </script>
+</body>
+<footer> <a href="accueil.html"> <button  >Retour à l'accueil</button></a></footer>
+</html>

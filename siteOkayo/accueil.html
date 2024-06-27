@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h1>Accueil</h1>
+    </header>
+    <nav>
+
+        <ul>
+            <li class="menu-gauche" id='menu-gauche'><a>OKAYO</a>
+                
+            </li>
+            
+            <li class="menu"><a href="#">About</a>
+                <ul class="submenu">
+                    <li><a href="afficher.php" >afficher les clients</a></li>
+                    <li><a href="afficherFacture.php">Afficher les factures</a></li>
+                </ul>
+            </li>
+    
+            <li class="menu"><a href="#">Services</a>
+                <ul class="submenu">
+                    <li><a href="calculTTC.pHP">calculTTC</a></li>
+                    <li><a href="formulaireAjouterFacture.php">ajoute une factureeeee</a></li>
+                    <li><a href="calculateur.html">calculer le prix TTC</a></li>
+                                
+                    </ul>
+            </li>
+
+            
+    
+           
+                        
+        </ul>
+                
+                
+    
+    
+    </nav>
+    <main>
+        <section id="section1">
+            <h2>Section 1</h2>
+            <p>Les “désignations” correspondent à un panel de prestations fournies par la société Okayo, qui font partie d’un
+                catalogue donné (l’”offre” Okayo), qui les facture à ses clients. (on peut ignorer les quantité = “-1”).
+                • P.U HT : prix unitaire hors taxe
+                • Qté : quantité
+                • TTC = HT x (1+TVA)
+                Dans un premier temps, nous vous invitons à décrire le modèle de données relationnel qui serait lié à la gestion
+                de cette fonctionnalité. Il s’agit d’une part de stocker cette facture, mais aussi, dans le traitement de création
+                de celle-ci de faire appel à des paramètres qui seraient préalablement stockés (taux de TVA sur une période
+                donnée, base client, base catalogue des éléments désignés en ligne sur les factures, ...) Vous pouvez fixer des
+                hypothèses sur le fonctionnement du système. Une fois celles-ci explicitées, votre solution les traitera en
+                intégralité. Nous attirons l’attention sur le fait que :
+                • Une fois la facture établie à une date donnée, et à chaque consultation, le TTC devra être
+                systématiquement le même, indépendamment des évolutions de tarif des produits du catalogue.
+                • Les noms et les prix des prestations pourront éventuellement évoluer dans le catalogue, mais doivent
+                être évidemment rester inchangés sur les factures déjà existantes
+                • La TVA peut changer au fur et à mesure du temps et peut être différente pour chaque produit du
+                catalogue. Il est possible que celle-ci doive évoluer à une date précise ou pour une période donnée.
+                Pour aller plus loin (facultatif)
+                Dans un second temps, nous vous proposons de développer une petite application (que vous pourrez nous livrer
+                sur bitbucket ou github par exemple), qui pourra prendre la forme d’une API (ou toute autre forme selon vos
+                souhaits et envies) permettant à une application tierce ou à un utilisateur d’appeler les fonctionnalités de l’API
+                que vous avez décrites ci-avant. N’hésitez pas à montrer d’éventuelles possibilités d’évolutions, d’autres
+                fonctionnalités possibles, par une documentation, des commentaires dans le code, ou une éventuelle
+                présentation orale.
+                Cette application devra effectuer a minima les fonctionnalités décrites dans la partie précédente.</p>
+        </section>
+
+    </main>
+    <footer>
+        <p>&copy; 2024 Mon Site Web. Tous droits réservés.</p>
+    </footer>
+</body>
+</html>
